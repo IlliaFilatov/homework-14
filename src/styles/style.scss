@@ -1,0 +1,97 @@
+
+$bg: rgba(0, 155, 149, .25);
+$main: rgba(0, 155, 149, .75);
+$secondary: rgba(255, 158, 0, .75);
+$accent: rgba(245, 61, 101, .35);
+$accent-2: rgba(0, 155, 169, .95);
+$shadow: rgba(0, 0, 0, .3);
+$shadow-hover: rgba(255, 255, 255, .3);
+
+//наделал кучу цветов - использую оттенки одного. классика.
+
+body {
+  margin: 0;
+  background: $bg;
+  box-sizing: border-box;
+  font-family: 'Coming Soon', cursive;
+
+  ::-webkit-scrollbar {
+    width: 4px;
+    background-color: transparent;
+  }
+  ::-webkit-scrollbar-thumb {
+    background-color: $main;
+    border-radius: 5px;
+    border: 3px solid $bg;
+}
+}
+#container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  flex: 2 1 100px;
+  flex-wrap: wrap;
+  margin: 45px 35px;
+  padding: 15px;
+  background: $bg;
+  border-radius: 3px;
+  box-shadow: 1px 1px 3px 4px $shadow;
+
+  .item {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    margin: 8px;
+    width: 21%;
+    height: 400px;
+    background: white;
+    overflow: hidden;
+    border-radius: 5px;
+    box-shadow: 0 0 3px 3px $shadow;
+    cursor: pointer;
+    transition: .15s linear all;
+    border: 2px solid white;
+
+    .title {
+      width: 100%;
+      background: $accent-2;
+      color: white;
+      font-size: 20px;
+      font-weight: 300;
+      letter-spacing: -1px;
+      line-height: 36px;
+      text-align: center;
+    }
+    .description {
+      background: white;
+      flex: 1 0 auto;
+      padding: 10px 15px;
+      max-height: 285px;
+      overflow-y: scroll;
+      scrollbar-color: white;
+      font-size: 16px;
+      font-weight: 300;
+      line-height: 24px;
+    }
+    .info {
+      position: absolute;
+      bottom: 0;
+      display: flex;
+      flex: 0 0 auto;
+      flex-direction: row;
+      justify-content: space-around;
+      width: 100%;
+      background: $bg;
+      color: black;
+      font-size: 15px;
+      font-weight: 300;
+      line-height: 30px;
+      text-align: center;
+      letter-spacing: -1px
+    }
+    &:hover {
+      transform: scale(1.09);
+      z-index: 2;
+    }
+  }
+}
